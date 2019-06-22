@@ -10,11 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace Encuestas.Core
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SurveysDetailsView : ContentPage
+    public partial class SurveysView : ContentPage
     {
-        public SurveysDetailsView()
+        public SurveysView()
         {
             InitializeComponent();
+        }
+
+        private async void AddSurveryButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SurveysDetailsView());
         }
     }
 }
