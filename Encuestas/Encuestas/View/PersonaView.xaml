@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Encuestas.Core.Model"
+             mc:Ignorable="d"
+             x:Class="Encuestas.Core.View.PersonaView">
+    
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:Persona x:Key="persona1"
+                           Nombre="Rodrigo"
+                           Pais="Mexico" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Margin="10">
+        <Label Text="{Binding Nombre, 
+            Source={StaticResource persona1}, 
+            Mode=OneWay}" />
+        
+        <Label Text="{Binding Pais, 
+            Source={StaticResource persona1}, 
+            Mode=OneWay}" />
+
+        <Button Text="Modificar"
+                Clicked="Button_Clicked"/>
+
+    </StackLayout>
+</ContentPage>

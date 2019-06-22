@@ -1,4 +1,5 @@
 ﻿using Encuestas.Core;
+using Encuestas.Core.View;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,7 +12,7 @@ namespace Encuestas
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new SurveysView());
+            MainPage = new NavigationPage(new PersonaView());
         }
 
         protected override void OnStart()
