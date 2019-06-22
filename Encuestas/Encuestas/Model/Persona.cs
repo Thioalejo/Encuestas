@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Encuestas.Core.Model
 {
     public class Persona :INotifyPropertyChanged
     {
-        public void OnPropertyChanged(string propertyName)
+        public void OnPropertyChanged([CallerMemberName] string propertyName=null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
@@ -20,7 +21,7 @@ namespace Encuestas.Core.Model
             set
             {
                 nombre = value;
-                OnPropertyChanged("Nombre");
+                OnPropertyChanged();
             }
         }
 
@@ -32,7 +33,7 @@ namespace Encuestas.Core.Model
             set
             {
                 pais = value;
-                OnPropertyChanged("Pais");
+                OnPropertyChanged();
             }
         }
 
