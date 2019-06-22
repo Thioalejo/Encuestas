@@ -15,6 +15,14 @@ namespace Encuestas.Core
         public SurveysView()
         {
             InitializeComponent();
+
+            MessagingCenter.Subscribe<ContentPage, Model.Survery>(this, Model.Messages.NewSurveyComplete, (sender, args) =>
+            {
+                SurveryPanel.Children.Add(new Label()
+                {
+                    Text = args.ToString()
+                });
+            });
         }
 
         private async void AddSurveryButton_Clicked(object sender, EventArgs e)
